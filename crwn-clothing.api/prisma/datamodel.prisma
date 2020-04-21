@@ -1,0 +1,13 @@
+type Collection {
+  id: ID! @id
+  title: String! @unique
+  items: [Item!]!
+}
+
+type Item {
+  id: ID! @id
+  name: String!
+  imageUrl: String!
+  price: Float!
+  collection: Collection @relation(link: INLINE)
+}

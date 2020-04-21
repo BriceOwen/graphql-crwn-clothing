@@ -1,0 +1,36 @@
+type Query {
+  #   me: User
+  collections: [Collection!]!
+  collection(id: ID!): Collection
+  getCollectionsByTitle(title: String): Collection
+}
+
+# type Mutation {
+#   signup(email: String!, password: String!, name: String!): AuthPayload!
+#   login(email: String!, password: String!): AuthPayload!
+# }
+
+# type AuthPayload {
+#   token: String!
+#   user: User!
+# }
+
+# type User {
+#   id: ID!
+#   email: String!
+#   name: String!
+# }
+
+type Collection {
+  id: ID!
+  title: String!
+  items: [Item!]!
+}
+
+type Item {
+  id: ID!
+  name: String!
+  imageUrl: String!
+  price: Float!
+  collection: Collection
+}
